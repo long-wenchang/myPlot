@@ -2,6 +2,7 @@
 #define APP_H
 
 #include <QMainWindow>
+#include <QDockWidget>
 #include <qcustomplot.h>
 
 QT_BEGIN_NAMESPACE
@@ -39,5 +40,6 @@ private:
     Ui::App *ui;
 
     QCustomPlot *customPlot;
+    QDockWidget *dockWidget_data, *dockWidget_setting, *dockWidget_status;
 };
 #endif // APP_H
