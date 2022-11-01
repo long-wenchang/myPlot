@@ -10,12 +10,15 @@ CONFIG += c++11
 
 SOURCES += \
     customplot_init.cpp \
+    dockwidget_init.cpp \
+    mDockWiget.cpp \
     main.cpp \
     app.cpp \
     qcustomplot.cpp
 
 HEADERS += \
     app.h \
+    mDockWidget.h \
     qcustomplot.h
 
 FORMS += \
@@ -25,3 +28,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    QSS.qrc
