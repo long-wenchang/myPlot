@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>App</class>
+ <widget class="QMainWindow" name="App">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1293</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>App</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="QSS.qrc">
+    <normaloff>:/icon/icon/app.ico</normaloff>:/icon/icon/app.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QCustomPlot" name="customPlot" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>601</width>
+      <height>571</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1293</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_files">
+    <property name="title">
+     <string>文件(f)</string>
+    </property>
+    <addaction name="action_open"/>
+    <addaction name="action_close"/>
+    <addaction name="action_save"/>
+    <addaction name="action_save_as"/>
+    <addaction name="action_export"/>
+   </widget>
+   <widget class="QMenu" name="menu_windows">
+    <property name="title">
+     <string>窗口(s)</string>
+    </property>
+    <addaction name="action_data_window"/>
+    <addaction name="action_setting_window"/>
+   </widget>
+   <addaction name="menu_files"/>
+   <addaction name="menu_windows"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidget_data">
+   <property name="minimumSize">
+    <size>
+     <width>316</width>
+     <height>401</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>数据</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_data">
+    <widget class="QTableWidget" name="tableWidget_data">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>301</width>
+       <height>551</height>
+      </rect>
+     </property>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>9</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>10</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>11</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>12</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>A</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>B</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="background">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
+     </item>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_setting">
+   <property name="minimumSize">
+    <size>
+     <width>361</width>
+     <height>401</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>设置</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_setting">
+    <widget class="QTabWidget" name="tabWidget_setting">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>361</width>
+       <height>561</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tab_plotTitle">
+      <attribute name="title">
+       <string>标题</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_title">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>331</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QGroupBox" name="groupBox_title_font">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>311</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>字体</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <widget class="QFontComboBox" name="fontComboBox_title">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>201</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_title_font_size">
+         <property name="geometry">
+          <rect>
+           <x>261</x>
+           <y>20</y>
+           <width>41</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_title_font_color">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>颜色：</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_title_font_color_show">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>52</y>
+           <width>151</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>RGBA(255,255,255,255)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_title_font_color_select">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>选择</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_title_font_size">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>20</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>大小：</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_title_content">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>311</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>内容</string>
+        </property>
+        <widget class="QTextEdit" name="textEdit_title_content">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>281</width>
+           <height>71</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_title_confirm">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>220</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>确认</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_plotAxis">
+      <attribute name="title">
+       <string>轴</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_axis">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>331</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QToolBox" name="toolBox_axis">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>311</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(240, 240, 240, 80);</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="page_leftAxis">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>311</width>
+           <height>397</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>左轴</string>
+         </attribute>
+         <widget class="QPushButton" name="pushButton_confirm_leftAxis">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>300</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确认</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_leftAxis">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>311</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>刻度</string>
+          </property>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_leftAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_leftAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_leftAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最大值：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_leftAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最小值：</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_leftAxis_title">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>70</y>
+            <width>311</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>标题</string>
+          </property>
+          <widget class="QGroupBox" name="groupBox_leftAxis_title_content">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>291</width>
+             <height>101</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>内容</string>
+           </property>
+           <widget class="QTextEdit" name="textEdit_leftAxis_min_title_content">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>271</width>
+              <height>71</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_leftAxis_min_title_font">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>291</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>字体</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+           <widget class="QFontComboBox" name="fontComboBox_leftAxis_title">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>181</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_leftAxistitle_font_size">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>20</y>
+              <width>41</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_leftAxis_title_font_color">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>颜色：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_leftAxis_title_font_color_show">
+            <property name="geometry">
+             <rect>
+              <x>60</x>
+              <y>52</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>RGBA(255,255,255,255)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_leftAxis_font_color_select">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>50</y>
+              <width>81</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>选择</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_leftAxis_title_font_size">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>20</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>大小：</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_bottomAxis">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>下轴</string>
+         </attribute>
+         <widget class="QPushButton" name="pushButton_confirm_bottomAxis">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>370</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确认</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_bottomAxis">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>311</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>刻度</string>
+          </property>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_bottomAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_bottomAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_bottomAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最大值：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_bottomAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最小值：</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_bottomAxis_title">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>70</y>
+            <width>311</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>标题</string>
+          </property>
+          <widget class="QGroupBox" name="groupBox_bottomAxis_title_content">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>291</width>
+             <height>101</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>内容</string>
+           </property>
+           <widget class="QTextEdit" name="textEdit_bottomAxis_min_title_content">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>271</width>
+              <height>71</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_bottomAxis_min_title_font">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>291</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>字体</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+           <widget class="QFontComboBox" name="fontComboBox_bottomAxis_title">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>181</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_bottomAxistitle_font_size">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>20</y>
+              <width>41</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_bottomAxis_title_font_color">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>颜色：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_bottomAxis_title_font_color_show">
+            <property name="geometry">
+             <rect>
+              <x>60</x>
+              <y>52</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>RGBA(255,255,255,255)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_bottomAxis_font_color_select">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>50</y>
+              <width>81</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>选择</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_bottomAxis_title_font_size">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>20</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>大小：</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_rightAxis">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>右轴</string>
+         </attribute>
+         <widget class="QPushButton" name="pushButton_confirm_rightAxis">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>370</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确认</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_rightAxis">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>311</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>刻度</string>
+          </property>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_rightAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_rightAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_rightAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最大值：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_rightAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最小值：</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_rightAxis_title">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>70</y>
+            <width>311</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>标题</string>
+          </property>
+          <widget class="QGroupBox" name="groupBox_rightAxis_title_content">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>291</width>
+             <height>101</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>内容</string>
+           </property>
+           <widget class="QTextEdit" name="textEdit_rightAxis_min_title_content">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>271</width>
+              <height>71</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_rightAxis_min_title_font">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>291</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>字体</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+           <widget class="QFontComboBox" name="fontComboBox_rightAxis_title">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>181</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_rightAxistitle_font_size">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>20</y>
+              <width>41</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_rightAxis_title_font_color">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>颜色：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_rightAxis_title_font_color_show">
+            <property name="geometry">
+             <rect>
+              <x>60</x>
+              <y>52</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>RGBA(255,255,255,255)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_rightAxis_font_color_select">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>50</y>
+              <width>81</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>选择</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_rightAxis_title_font_size">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>20</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>大小：</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_topAxis">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>上轴</string>
+         </attribute>
+         <widget class="QPushButton" name="pushButton_confirm_topAxis">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>370</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确认</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_topAxis">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>311</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>刻度</string>
+          </property>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_topAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_topAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>20</y>
+             <width>62</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_topAxis_max">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最大值：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_topAxis_min">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>20</y>
+             <width>54</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>最小值：</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_topAxis_title">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>70</y>
+            <width>311</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>标题</string>
+          </property>
+          <widget class="QGroupBox" name="groupBox_topAxis_title_content">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>291</width>
+             <height>101</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>内容</string>
+           </property>
+           <widget class="QTextEdit" name="textEdit_topAxis_min_title_content">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>271</width>
+              <height>71</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_topAxis_min_title_font">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>291</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>字体</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+           <widget class="QFontComboBox" name="fontComboBox_topAxis_title">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>181</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="spinBox_topAxistitle_font_size">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>20</y>
+              <width>41</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_topAxis_title_font_color">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>颜色：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_topAxis_title_font_color_show">
+            <property name="geometry">
+             <rect>
+              <x>60</x>
+              <y>52</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>RGBA(255,255,255,255)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_topAxis_font_color_select">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>50</y>
+              <width>81</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>选择</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_topAxis_title_font_size">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>20</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>大小：</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_plotLegend">
+      <attribute name="title">
+       <string>图列</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_legend">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>331</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QGroupBox" name="groupBox_legend_object">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>311</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>对象</string>
+        </property>
+        <widget class="QComboBox" name="comboBox_legend_object">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>291</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_legend_title">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>311</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>标题</string>
+        </property>
+        <widget class="QGroupBox" name="groupBox_legend_object_content">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>291</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>内容</string>
+         </property>
+         <widget class="QTextEdit" name="textEdit_legend_object_content">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>271</width>
+            <height>71</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_legend_object_title">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>291</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>字体</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <widget class="QFontComboBox" name="fontComboBox_legend_object_title_font">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>181</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBox_legend_object_title_font_size">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>20</y>
+            <width>41</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_legend_object_title_font_color">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>50</y>
+            <width>41</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>颜色：</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label__legend_object_title_font_color_show">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>52</y>
+            <width>131</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>RGBA(255,255,255,255)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_legend_object_title_font_color_select">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>50</y>
+            <width>81</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>选择</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label__legend_object_title_font_size">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>20</y>
+            <width>41</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>大小：</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_legend_style">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>311</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>类型</string>
+        </property>
+        <widget class="QComboBox" name="comboBox_legend_sytle">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>201</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_legend_style_color">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>颜色：</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_legend_style_color_show">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>50</y>
+           <width>151</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>RGBA(255,255,255,255)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_legend_sytle_color_select">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>选择</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_legend_style_size">
+         <property name="geometry">
+          <rect>
+           <x>219</x>
+           <y>20</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>大小：</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_legend_style_size">
+         <property name="geometry">
+          <rect>
+           <x>260</x>
+           <y>20</y>
+           <width>41</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_legend_confirm">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>380</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>确认</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <action name="action_open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="QSS.qrc">
+     <normaloff>:/icon/icon/save.ico</normaloff>:/icon/icon/save.ico</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="action_export">
+   <property name="icon">
+    <iconset resource="QSS.qrc">
+     <normaloff>:/icon/icon/export.ico</normaloff>:/icon/icon/export.ico</iconset>
+   </property>
+   <property name="text">
+    <string>导出</string>
+   </property>
+  </action>
+  <action name="action_data_window">
+   <property name="text">
+    <string>数据窗口</string>
+   </property>
+  </action>
+  <action name="action_setting_window">
+   <property name="text">
+    <string>设置窗口</string>
+   </property>
+  </action>
+  <action name="action_close">
+   <property name="text">
+    <string>关闭</string>
+   </property>
+   <property name="iconText">
+    <string>关闭</string>
+   </property>
+   <property name="toolTip">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="action_save_as">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+   <property name="iconText">
+    <string>另存为</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="QSS.qrc"/>
+ </resources>
+ <connections/>
+</ui>
