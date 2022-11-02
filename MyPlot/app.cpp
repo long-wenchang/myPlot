@@ -1,6 +1,5 @@
 #include "app.h"
 #include "ui_app.h"
-#include "QMenu"
 
 App::App(QWidget *parent)
     : QMainWindow(parent)
@@ -8,20 +7,21 @@ App::App(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QFile file(":/qss/app.qss");
+    QFile file(":/app.qss");
     file.open(QFile::ReadOnly);
     QTextStream fileText(&file);
-    QString ss = fileText.readAll();
-    qDebug() << ss;
-    this->setStyleSheet(ss);
+    QString qss = fileText.readAll();
+    // qDebug() << qss;
+    this->setStyleSheet(qss);
     file.close();
 
     this->customPlot_Init();
-
     this->dockWidget_Init();
+    this->tableWidget_Init();
 }
 
 App::~App()
 {
     delete ui;
 }
+

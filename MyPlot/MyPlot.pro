@@ -9,16 +9,15 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    customplot_init.cpp \
+    customPlot_init.cpp \
     dockwidget_init.cpp \
-    mDockWiget.cpp \
     main.cpp \
     app.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    tablewidget_init.cpp
 
 HEADERS += \
     app.h \
-    mDockWidget.h \
     qcustomplot.h
 
 FORMS += \

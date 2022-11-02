@@ -2,9 +2,8 @@
 #define APP_H
 
 #include <QMainWindow>
-#include <QDockWidget>
 #include <qcustomplot.h>
-#include <mDockWidget.h>
+#include <QDockWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class App; }
@@ -21,13 +20,14 @@ public:
 protected:
     void customPlot_Init();
     void dockWidget_Init();
-    void dockWidget_data_Init();
-    void dockWidget_setting_Init();
-    void dockWidget_state_Init();
+    void tableWidget_Init();
 
 private slots:
-    void action_state();
+    // dockWidget
+    void action_window_Slot();
 
+    // customPlot
+    void updateLegend_Slot();
     void titleDoubleClick_Slot(QMouseEvent *event);
     void axisLabelDoubleClick_Slot(QCPAxis *axis, QCPAxis::SelectablePart part);
     void legendDoubleClick_Slot(QCPLegend *legend, QCPAbstractLegendItem *item);
@@ -40,16 +40,25 @@ private slots:
     void removeSelectedGraph_Slot();
     void removeAllGraphs_Slot();
     void contextMenuRequest_Slot(QPoint pos);
-    void moveLenged_Slot();
+    void moveLegend_Slot();
     void graphClicked_Slot(QCPAbstractPlottable *plotTable, int dataIndex);
+
+    // tableWidget
+    void tableWidget_contextMenu_Slot(QPoint pos);
+    void tableWidgetH_contextMenu_Slot(QPoint pos);
+    void tableWidgetV_contextMenu_Slot(QPoint pos);
+
+    void tableW_removeRow();
+    void tableW_removeColumn();
+    void tableW_insertRow();
+    void tableW_insertColumn();
+    void tableW_resetHeader();
 
 private:
     Ui::App *ui;
 
     QCustomPlot *customPlot;
-    //mDockWidget *dockWidget_data, *dockWidget_setting, *dockWidget_status;
-    QDockWidget *dockWidget_data, *dockWidget_setting, *dockWidget_status;
+
+    QDockWidget *dock_data, *dock_setting;
 };
-
-
 #endif // APP_H
