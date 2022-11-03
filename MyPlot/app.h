@@ -4,6 +4,11 @@
 #include <QMainWindow>
 #include <qcustomplot.h>
 #include <QDockWidget>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMimeData>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class App; }
@@ -21,6 +26,9 @@ protected:
     void customPlot_Init();
     void dockWidget_Init();
     void tableWidget_Init();
+
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
 
 private slots:
     // dockWidget
@@ -53,6 +61,10 @@ private slots:
     void tableW_insertRow();
     void tableW_insertColumn();
     void tableW_resetHeader();
+
+    // bool tableW_copy();
+    void tableW_copySelect();
+    void tableW_paste();
 
 private:
     Ui::App *ui;
