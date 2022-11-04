@@ -3,28 +3,14 @@
 
 void App::tableWidget_Init()
 {
-//    QStringList rowCountList, columnCountList;
-//    for(int i=0; i<26; i++)
-//    {
-//        rowCountList.append(QString('A' + i));
-//    }
-//    for (int i=0; i<100; i++)
-//    {
-//        rowCountList.append(QString::number(i));
-//    }
-//    ui->tableWidget_data->horizontalHeader()->reset();
-//    ui->tableWidget_data->verticalHeader()->reset();
-    ui->tableWidget_data->setColumnCount(26);
-    ui->tableWidget_data->setRowCount(1000);
-//    ui->tableWidget_data->setHorizontalHeaderLabels(rowCountList);
-//    ui->tableWidget_data->setVerticalHeaderLabels(columnCountList);
-
+    ui->tableWidget_data->setColumnCount(TABLEW_COLUMN);
+    ui->tableWidget_data->setRowCount(TABLEW_ROW);
     ui->tableWidget_data->setContextMenuPolicy(Qt::CustomContextMenu);      // 设置右击菜单
-    // connect(ui->tableWidget_data, &QTableWidget::customContextMenuRequested, this, &App::tableWidget_contextMenu_Slot);
     connect(ui->tableWidget_data, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(tableWidget_contextMenu_Slot(QPoint)));
 
     ui->tableWidget_data->horizontalHeader()->setStyleSheet("background-color: rgb(200, 200, 200);");
     ui->tableWidget_data->verticalHeader()->setStyleSheet("background-color: rgb(200, 200, 200);");
+    ui->tableWidget_data->clearContents();
 
     QHeaderView *hHeader = ui->tableWidget_data->horizontalHeader();
     hHeader->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -94,8 +80,6 @@ void App::tableW_removeRow()
         {
             ui->tableWidget_data->removeRow(dataInt);
         }
-
-        // this->tableW_resetHeader();
     }
 }
 
@@ -109,7 +93,6 @@ void App::tableW_removeColumn()
         {
             ui->tableWidget_data->removeColumn(dataInt);
         }
-        // this->tableW_resetHeader();
     }
 }
 
@@ -123,7 +106,6 @@ void App::tableW_insertRow()
         {
             ui->tableWidget_data->insertRow(dataInt);
         }
-        // this->tableW_resetHeader();
     }
 }
 
@@ -137,7 +119,6 @@ void App::tableW_insertColumn()
         {
             ui->tableWidget_data->insertColumn(dataInt);
         }
-        // this->tableW_resetHeader();
     }
 }
 
@@ -307,6 +288,55 @@ void App::tableW_paste()
     }
 }
 
+void App::tableW_insertData(QString str, int row_index, int column_index)
+{
+    // 根据选择的第一个单元格开始插入内容
+    int table_rowConut_1 = ui->tableWidget_data->rowCount();
+    int table_columnCount_1 = ui->tableWidget_data->columnCount();
+
+    int str_rowCount_1 = 0, str_columnCount_1;
+
+    QList<QString> rowList = str.split("\n");
+    str_rowCount_1 = rowList.size();
+
+    // qDebug() << str_rowCount_1 << str_columnCount_1;
+    if (str_rowCount_1 > table_rowConut_1)
+    {
+        for (int i=0; i<(str_rowCount_1 - table_rowConut_1); i++)
+            ui->tableWidget_data->insertRow(1);
+    }
+
+    int x = row_index;
+    for (int i=0; i<str_rowCount_1; i++)
+    {
+        if (!rowList.isEmpty())
+        {
+            QList<QString> columnList = rowList[i].split("\t");
+            str_columnCount_1 = columnList.size();
+            if (str_columnCount_1 > table_columnCount_1)
+            {
+                for (int i=0; i<(str_columnCount_1 - table_columnCount_1); i++)
+                    ui->tableWidget_data->insertColumn(1);
+            }
+            int y = column_index;
+            for (int j=0; j<str_columnCount_1; j++)
+            {
+                QTableWidgetItem *item = ui->tableWidget_data->item(x, y);
+                if (item == nullptr)
+                {
+                    ui->tableWidget_data->setItem(x, y, new QTableWidgetItem(columnList[j]));
+                }
+                else if (item != nullptr)
+                {
+                    ui->tableWidget_data->item(x, y)->setText(columnList[j]);
+                }
+                y++;
+            }
+
+        }
+        x++;
+    }
+}
 
 
 

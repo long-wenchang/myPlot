@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     customPlot_init.cpp \
+    dataaction_init.cpp \
     dockwidget_init.cpp \
     main.cpp \
     app.cpp \

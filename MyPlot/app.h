@@ -9,6 +9,12 @@
 #include <QMimeData>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QFile>
+#include <QTextStream>
+
+#define TABLEW_ROW      99
+#define TABLEW_COLUMN   9
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class App; }
@@ -23,6 +29,7 @@ public:
     ~App();
 
 protected:
+    void dataAction_Init();
     void customPlot_Init();
     void dockWidget_Init();
     void tableWidget_Init();
@@ -31,7 +38,15 @@ protected:
     void dropEvent(QDropEvent *event) override;
 
 private slots:
-    // dockWidget
+    // plot
+    void plot_Slot();
+    void addGraph4data(QVector<double> x, QVector<double> y);
+
+    // action
+    void action_openFile_Slot();
+    void action_closeFile_Slot();
+    void action_saveFile_Slot();
+    void action_exportFile_Slot();
     void action_window_Slot();
 
     // customPlot
@@ -65,6 +80,8 @@ private slots:
     // bool tableW_copy();
     void tableW_copySelect();
     void tableW_paste();
+
+    void tableW_insertData(QString str, int row_index, int column_index);
 
 private:
     Ui::App *ui;
