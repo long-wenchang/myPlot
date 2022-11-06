@@ -18,8 +18,8 @@ void App::customPlot_Init()
     customPlot->axisRect()->setupFullAxesBox();
 
     customPlot->plotLayout()->insertRow(0);
-    QCPTextElement *title = new QCPTextElement(customPlot, "Title", plotFont);
-    customPlot->plotLayout()->addElement(0, 0, title);
+    plotTitle = new QCPTextElement(customPlot, "Title", plotFont);
+    customPlot->plotLayout()->addElement(0, 0, plotTitle);
 
     customPlot->xAxis->setLabel("X");
     customPlot->yAxis->setLabel("Y");
@@ -67,7 +67,7 @@ void App::customPlot_Init()
     // connect(customPlot, &QCustomPlot::axisDoubleClick, this, &App::axisLabelDoubleClick_Slot);
     connect(customPlot, SIGNAL(axisDoubleClick(QCPAxis*,QCPAxis::SelectablePart,QMouseEvent*)), this, SLOT(axisLabelDoubleClick_Slot(QCPAxis*,QCPAxis::SelectablePart)));
     connect(customPlot, SIGNAL(legendDoubleClick(QCPLegend*,QCPAbstractLegendItem*,QMouseEvent*)), this, SLOT(legendDoubleClick_Slot(QCPLegend*,QCPAbstractLegendItem*)));
-    connect(title, SIGNAL(doubleClicked(QMouseEvent*)), this, SLOT(titleDoubleClick_Slot(QMouseEvent*)));
+    connect(plotTitle, SIGNAL(doubleClicked(QMouseEvent*)), this, SLOT(titleDoubleClick_Slot(QMouseEvent*)));
 
     // 连接槽，点击图形时在状态栏显示消息:
     connect(customPlot, SIGNAL(plottableClick(QCPAbstractPlottable*,int,QMouseEvent*)), this, SLOT(graphClicked_Slot(QCPAbstractPlottable*,int)));

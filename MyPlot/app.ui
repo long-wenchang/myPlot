@@ -20,7 +20,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QCustomPlot" name="customPlot" native="true"/>
+     <widget class="QCustomPlot" name="customPlot" native="true">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -156,7 +160,7 @@ border: 1px solid rgb(255, 255, 255);</string>
         <bool>false</bool>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab_plotTitle">
         <attribute name="title">
@@ -191,19 +195,6 @@ border: 1px solid rgb(255, 255, 255);</string>
                <width>201</width>
                <height>22</height>
               </rect>
-             </property>
-            </widget>
-            <widget class="QSpinBox" name="spinBox_title_font_size">
-             <property name="geometry">
-              <rect>
-               <x>261</x>
-               <y>20</y>
-               <width>41</width>
-               <height>22</height>
-              </rect>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
              </property>
             </widget>
             <widget class="QLabel" name="label_title_font_color">
@@ -262,6 +253,16 @@ border: 1px solid rgb(255, 255, 255);</string>
              </property>
              <property name="text">
               <string>大小：</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="comboBox_title_font_size">
+             <property name="geometry">
+              <rect>
+               <x>250</x>
+               <y>20</y>
+               <width>51</width>
+               <height>22</height>
+              </rect>
              </property>
             </widget>
            </widget>
@@ -328,7 +329,7 @@ border: 1px solid rgb(255, 255, 255);</string>
              <string notr="true">background-color: rgba(240, 240, 240, 80);</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page_leftAxis">
              <property name="geometry">
@@ -474,19 +475,6 @@ border: 1px solid rgb(255, 255, 255);</string>
                  </rect>
                 </property>
                </widget>
-               <widget class="QSpinBox" name="spinBox_leftAxistitle_font_size">
-                <property name="geometry">
-                 <rect>
-                  <x>240</x>
-                  <y>20</y>
-                  <width>41</width>
-                  <height>22</height>
-                 </rect>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
                <widget class="QLabel" name="label_leftAxis_title_font_color">
                 <property name="geometry">
                  <rect>
@@ -545,6 +533,16 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <string>大小：</string>
                 </property>
                </widget>
+               <widget class="QComboBox" name="comboBox_leftAxis_min_title_font_size">
+                <property name="geometry">
+                 <rect>
+                  <x>230</x>
+                  <y>20</y>
+                  <width>51</width>
+                  <height>22</height>
+                 </rect>
+                </property>
+               </widget>
               </widget>
              </widget>
             </widget>
@@ -553,8 +551,8 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>311</width>
+               <height>397</height>
               </rect>
              </property>
              <attribute name="label">
@@ -692,19 +690,6 @@ border: 1px solid rgb(255, 255, 255);</string>
                  </rect>
                 </property>
                </widget>
-               <widget class="QSpinBox" name="spinBox_bottomAxistitle_font_size">
-                <property name="geometry">
-                 <rect>
-                  <x>240</x>
-                  <y>20</y>
-                  <width>41</width>
-                  <height>22</height>
-                 </rect>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
                <widget class="QLabel" name="label_bottomAxis_title_font_color">
                 <property name="geometry">
                  <rect>
@@ -763,6 +748,16 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <string>大小：</string>
                 </property>
                </widget>
+               <widget class="QComboBox" name="comboBox_bottomAxis_min_title_font_size">
+                <property name="geometry">
+                 <rect>
+                  <x>230</x>
+                  <y>20</y>
+                  <width>51</width>
+                  <height>22</height>
+                 </rect>
+                </property>
+               </widget>
               </widget>
              </widget>
             </widget>
@@ -771,8 +766,8 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>311</width>
+               <height>397</height>
               </rect>
              </property>
              <attribute name="label">
@@ -910,19 +905,6 @@ border: 1px solid rgb(255, 255, 255);</string>
                  </rect>
                 </property>
                </widget>
-               <widget class="QSpinBox" name="spinBox_rightAxistitle_font_size">
-                <property name="geometry">
-                 <rect>
-                  <x>240</x>
-                  <y>20</y>
-                  <width>41</width>
-                  <height>22</height>
-                 </rect>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
                <widget class="QLabel" name="label_rightAxis_title_font_color">
                 <property name="geometry">
                  <rect>
@@ -981,6 +963,16 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <string>大小：</string>
                 </property>
                </widget>
+               <widget class="QComboBox" name="comboBox_rightAxis_min_title_font_size">
+                <property name="geometry">
+                 <rect>
+                  <x>230</x>
+                  <y>20</y>
+                  <width>51</width>
+                  <height>22</height>
+                 </rect>
+                </property>
+               </widget>
               </widget>
              </widget>
             </widget>
@@ -989,8 +981,8 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>311</width>
+               <height>397</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1128,19 +1120,6 @@ border: 1px solid rgb(255, 255, 255);</string>
                  </rect>
                 </property>
                </widget>
-               <widget class="QSpinBox" name="spinBox_topAxistitle_font_size">
-                <property name="geometry">
-                 <rect>
-                  <x>240</x>
-                  <y>20</y>
-                  <width>41</width>
-                  <height>22</height>
-                 </rect>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
                <widget class="QLabel" name="label_topAxis_title_font_color">
                 <property name="geometry">
                  <rect>
@@ -1197,6 +1176,16 @@ border: 1px solid rgb(255, 255, 255);</string>
                 </property>
                 <property name="text">
                  <string>大小：</string>
+                </property>
+               </widget>
+               <widget class="QComboBox" name="comboBox_topAxis_min_title_font_size">
+                <property name="geometry">
+                 <rect>
+                  <x>230</x>
+                  <y>20</y>
+                  <width>51</width>
+                  <height>22</height>
+                 </rect>
                 </property>
                </widget>
               </widget>
@@ -1300,19 +1289,6 @@ border: 1px solid rgb(255, 255, 255);</string>
                </rect>
               </property>
              </widget>
-             <widget class="QSpinBox" name="spinBox_legend_object_title_font_size">
-              <property name="geometry">
-               <rect>
-                <x>240</x>
-                <y>20</y>
-                <width>41</width>
-                <height>22</height>
-               </rect>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
              <widget class="QLabel" name="label_legend_object_title_font_color">
               <property name="geometry">
                <rect>
@@ -1369,6 +1345,16 @@ border: 1px solid rgb(255, 255, 255);</string>
               </property>
               <property name="text">
                <string>大小：</string>
+              </property>
+             </widget>
+             <widget class="QComboBox" name="comboBox_legend_object_title_font_size">
+              <property name="geometry">
+               <rect>
+                <x>230</x>
+                <y>20</y>
+                <width>51</width>
+                <height>22</height>
+               </rect>
               </property>
              </widget>
             </widget>

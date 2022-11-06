@@ -33,11 +33,18 @@ protected:
     void customPlot_Init();
     void dockWidget_Init();
     void tableWidget_Init();
+    void tabWidget_Init();
+    void tabW_plotTitle();
+    void tabW_plotAxis();
+    void tabW_plotGraph();
 
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
 
 private slots:
+    // setting
+    void tabWidget_Slot(int index);
+
     // plot
     void plot_Slot();
     void addGraph4data(QVector<double> x, QVector<double> y);
@@ -89,5 +96,7 @@ private:
     QCustomPlot *customPlot;
 
     QDockWidget *dock_data, *dock_setting;
+
+    QCPTextElement *plotTitle;
 };
 #endif // APP_H

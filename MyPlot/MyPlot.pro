@@ -15,7 +15,8 @@ SOURCES += \
     main.cpp \
     app.cpp \
     qcustomplot.cpp \
-    tablewidget_init.cpp
+    tablewidget_init.cpp \
+    tabwidget_init.cpp
 
 HEADERS += \
     app.h \

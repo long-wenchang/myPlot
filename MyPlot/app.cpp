@@ -12,6 +12,7 @@ App::App(QWidget *parent)
     this->customPlot_Init();
     this->dockWidget_Init();
     this->tableWidget_Init();
+    this->tabWidget_Init();
 
     connect(ui->pushButton_plot, &QPushButton::clicked, this, &App::plot_Slot);
 
