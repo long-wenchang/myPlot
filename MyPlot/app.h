@@ -35,7 +35,7 @@ protected:
     void tableWidget_Init();
     void tabWidget_Init();
     void tabW_plotTitle();
-    void tabW_plotAxis();
+    void tabW_plotAxis(int index);
     void tabW_plotGraph();
 
     void dragEnterEvent(QDragEnterEvent *event) override;
@@ -44,6 +44,7 @@ protected:
 private slots:
     // setting
     void tabWidget_Slot(int index);
+    void plotGraph_SizeChanged(int size);
 
     // plot
     void plot_Slot();
@@ -98,5 +99,12 @@ private:
     QDockWidget *dock_data, *dock_setting;
 
     QCPTextElement *plotTitle;
+    QCPAxis *plotXAxis, *plotYAxis, *plotXAxis2, *plotYAxis2;
+    QCPLegend *plotLegend;
+
+    QCPGraph *plotGraph;
+    int plotGraphIndex = 0;
+    QVector<long> plotGraphIndexList;
+    QCPPlottableLegendItem *plotItem;
 };
 #endif // APP_H

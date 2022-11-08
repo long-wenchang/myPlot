@@ -8,47 +8,57 @@ void App::customPlot_Init()
     customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectAxes |
                                 QCP::iSelectLegend | QCP::iSelectItems | QCP::iSelectOther |
                                 QCP::iSelectPlottables | QCP::iSelectPlottablesBeyondAxisRect);
-    customPlot->xAxis->setRange(-10, 10);
-    customPlot->yAxis->setRange(-5, 5);
+    plotXAxis  = customPlot->xAxis;
+    plotYAxis  = customPlot->yAxis;
+    plotXAxis2 = customPlot->xAxis2;
+    plotYAxis2 = customPlot->yAxis2;
+    plotXAxis->setRange(-10, 10);
+    plotYAxis->setRange(-5, 5);
     QFont plotFont = QFont("Times New Roman", 22, QFont::Black);
-    customPlot->xAxis->setTickLabelFont(plotFont);
-    customPlot->yAxis->setTickLabelFont(plotFont);
-    customPlot->xAxis->setSelectedTickLabelFont(plotFont);
-    customPlot->yAxis->setSelectedTickLabelFont(plotFont);
+    plotXAxis->setTickLabelFont(plotFont);
+    plotYAxis->setTickLabelFont(plotFont);
+    plotXAxis->setSelectedTickLabelFont(plotFont);
+    plotYAxis->setSelectedTickLabelFont(plotFont);
     customPlot->axisRect()->setupFullAxesBox();
 
     customPlot->plotLayout()->insertRow(0);
     plotTitle = new QCPTextElement(customPlot, "Title", plotFont);
     customPlot->plotLayout()->addElement(0, 0, plotTitle);
 
-    customPlot->xAxis->setLabel("X");
-    customPlot->yAxis->setLabel("Y");
-    customPlot->xAxis->setLabelFont(plotFont);
-    customPlot->yAxis->setLabelFont(plotFont);
-    customPlot->xAxis->setSelectedLabelFont(plotFont);
-    customPlot->yAxis->setSelectedLabelFont(plotFont);
+    plotXAxis->setLabel("X");
+    plotYAxis->setLabel("Y");
+    plotXAxis->setLabelFont(plotFont);
+    plotYAxis->setLabelFont(plotFont);
+    plotXAxis->setSelectedLabelFont(plotFont);
+    plotYAxis->setSelectedLabelFont(plotFont);
 
-    customPlot->xAxis->setTickLabelPadding(10);
-    customPlot->xAxis->setLabelPadding(5);
-    customPlot->xAxis->setPadding(20);
-    customPlot->yAxis->setTickLabelPadding(10);
-    customPlot->yAxis->setLabelPadding(5);
-    customPlot->yAxis->setPadding(20);
-    customPlot->xAxis2->setPadding(20);
-    customPlot->yAxis2->setPadding(20);
+    plotXAxis->setTickLabelPadding(10);
+    plotXAxis->setLabelPadding(5);
+    plotXAxis->setPadding(20);
+    plotYAxis->setTickLabelPadding(10);
+    plotYAxis->setLabelPadding(5);
+    plotYAxis->setPadding(20);
+    plotXAxis2->setPadding(20);
+    plotYAxis2->setPadding(20);
+
+//    for (int index=0; index<customPlot->graphCount(); ++index)
+//    {
+//        plotGraph = customPlot->graph(index);
+//    }
+//    QCPPlottableLegendItem *item = plotLegend->itemWithPlottable(plotGraph);
+
+    plotLegend = customPlot->legend;
 
     if (customPlot->graphCount() != 0)
-        customPlot->legend->setVisible(true);
+        plotLegend->setVisible(true);
     else
-        customPlot->legend->setVisible(false);
-    // QFont legendFont = font();
-    // legendFont.setPointSize(10);
-    // customPlot->legend->setFont(legendFont);
-    customPlot->legend->setFont(plotFont);
-    customPlot->legend->setSelectedFont(plotFont);
-    //customPlot->legend->setSelectedFont(legendFont);
+        plotLegend->setVisible(false);
+
+    plotLegend->setFont(plotFont);
+    plotLegend->setSelectedFont(plotFont);
+
     // 图例框不能选择，只能选择图例物品
-    customPlot->legend->setSelectableParts(QCPLegend::spItems);
+    plotLegend->setSelectableParts(QCPLegend::spItems);
     // customPlot->legend->setSelectableParts(QCPLegend::spLegendBox);
 
     customPlot->rescaleAxes();
@@ -60,8 +70,8 @@ void App::customPlot_Init()
     connect(customPlot, SIGNAL(mouseWheel(QWheelEvent*)), this, SLOT(mouseWheel_Slot()));
 
     // 让底部和左侧轴将它们的范围转移到顶部和右侧轴:
-    connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
-    connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
+    connect(plotXAxis, SIGNAL(rangeChanged(QCPRange)), plotXAxis2, SLOT(setRange(QCPRange)));
+    connect(plotYAxis, SIGNAL(rangeChanged(QCPRange)), plotYAxis2, SLOT(setRange(QCPRange)));
 
     // 连接一些交互槽:
     // connect(customPlot, &QCustomPlot::axisDoubleClick, this, &App::axisLabelDoubleClick_Slot);
@@ -82,9 +92,9 @@ void App::customPlot_Init()
 void App::updateLegend_Slot()
 {
     if (customPlot->graphCount() != 0)
-        customPlot->legend->setVisible(true);
+        plotLegend->setVisible(true);
     else
-        customPlot->legend->setVisible(false);
+        plotLegend->setVisible(false);
 }
 
 void App::titleDoubleClick_Slot(QMouseEvent *event)
@@ -151,29 +161,29 @@ void App::selectionChanged_Slot()
     */
 
     // 使上下轴同步选择，将轴和勾标签处理为一个可选择对象:
-    if (customPlot->xAxis->selectedParts().testFlag(QCPAxis::spAxis) || customPlot->xAxis->selectedParts().testFlag(QCPAxis::spTickLabels) ||
-        customPlot->xAxis2->selectedParts().testFlag(QCPAxis::spAxis) || customPlot->xAxis2->selectedParts().testFlag(QCPAxis::spTickLabels))
+    if (plotXAxis->selectedParts().testFlag(QCPAxis::spAxis) || plotXAxis->selectedParts().testFlag(QCPAxis::spTickLabels) ||
+        plotXAxis2->selectedParts().testFlag(QCPAxis::spAxis) || plotXAxis2->selectedParts().testFlag(QCPAxis::spTickLabels))
     {
-        customPlot->xAxis2->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
-        customPlot->xAxis->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
+        plotXAxis2->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
+        plotXAxis->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
     }
     // 使左右轴同步选择，将轴和勾标签处理为一个可选择对象:
-    if (customPlot->yAxis->selectedParts().testFlag(QCPAxis::spAxis) || customPlot->yAxis->selectedParts().testFlag(QCPAxis::spTickLabels) ||
-        customPlot->yAxis2->selectedParts().testFlag(QCPAxis::spAxis) || customPlot->yAxis2->selectedParts().testFlag(QCPAxis::spTickLabels))
+    if (plotYAxis->selectedParts().testFlag(QCPAxis::spAxis) || plotYAxis->selectedParts().testFlag(QCPAxis::spTickLabels) ||
+        plotYAxis2->selectedParts().testFlag(QCPAxis::spAxis) || plotYAxis2->selectedParts().testFlag(QCPAxis::spTickLabels))
     {
-        customPlot->yAxis2->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
-        customPlot->yAxis->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
+        plotYAxis2->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
+        plotYAxis->setSelectedParts(QCPAxis::spAxis|QCPAxis::spTickLabels);
     }
 
     // 同步图形的选择与对应图例项的选择:
     for (int i=0; i<customPlot->graphCount(); ++i)
     {
-        QCPGraph *graph = customPlot->graph(i);
-        QCPPlottableLegendItem *item = customPlot->legend->itemWithPlottable(graph);
-        if (item->selected() || graph->selected())
+        plotGraph = customPlot->graph(i);
+        plotItem = plotLegend->itemWithPlottable(plotGraph);
+        if (plotItem->selected() || plotGraph->selected())
         {
-            item->setSelected(true);
-            graph->setSelection(QCPDataSelection(graph->data()->dataRange()));
+            plotItem->setSelected(true);
+            plotGraph->setSelection(QCPDataSelection(plotGraph->data()->dataRange()));
         }
     }
 }
@@ -183,10 +193,10 @@ void App::mousePress_Slot()
     // 如果选择了一个轴，则只允许拖动该轴的方向
     // 如果没有选择轴，两个方向都可以拖动
 
-    if (customPlot->xAxis->selectedParts().testFlag(QCPAxis::spAxis))
-        customPlot->axisRect()->setRangeDrag(customPlot->xAxis->orientation());
+    if (plotXAxis->selectedParts().testFlag(QCPAxis::spAxis))
+        customPlot->axisRect()->setRangeDrag(plotXAxis->orientation());
     else if (customPlot->yAxis->selectedParts().testFlag(QCPAxis::spAxis))
-        customPlot->axisRect()->setRangeDrag(customPlot->yAxis->orientation());
+        customPlot->axisRect()->setRangeDrag(plotYAxis->orientation());
     else
         customPlot->axisRect()->setRangeDrag(Qt::Horizontal|Qt::Vertical);
 }
@@ -195,10 +205,10 @@ void App::mouseWheel_Slot()
 {
     // 如果一个轴被选中，只允许该轴的方向被放大
     // 如果没有选择轴，两个方向都可以放大
-    if (customPlot->xAxis->selectedParts().testFlag(QCPAxis::spAxis))
-        customPlot->axisRect()->setRangeZoom(customPlot->xAxis->orientation());
-    else if (customPlot->yAxis->selectedParts().testFlag(QCPAxis::spAxis))
-        customPlot->axisRect()->setRangeZoom(customPlot->yAxis->orientation());
+    if (plotXAxis->selectedParts().testFlag(QCPAxis::spAxis))
+        customPlot->axisRect()->setRangeZoom(plotXAxis->orientation());
+    else if (plotYAxis->selectedParts().testFlag(QCPAxis::spAxis))
+        customPlot->axisRect()->setRangeZoom(plotYAxis->orientation());
     else
         customPlot->axisRect()->setRangeZoom(Qt::Horizontal|Qt::Vertical);
 }
@@ -235,6 +245,8 @@ void App::addRandomGraph_Slot()
     graphPen.setWidthF(rand()/(double)RAND_MAX*2 + 1);
     customPlot->graph()->setPen(graphPen);
     customPlot->replot();
+//    plotGraphIndexList.append(plotGraphIndex);
+//    plotGraphIndex++;
 }
 
 void App::removeSelectedGraph_Slot()
@@ -242,8 +254,14 @@ void App::removeSelectedGraph_Slot()
     // 移除选中的曲线
     if (customPlot->selectedGraphs().size() > 0)
     {
+        qDebug() << customPlot->selectedGraphs();
         customPlot->removeGraph(customPlot->selectedGraphs().first());
         customPlot->replot();
+//        if (customPlot->graphCount() == 0)
+//        {
+//            plotGraphIndex = 0;
+//            plotGraphIndexList.clear();
+//        }
     }
 }
 
@@ -253,6 +271,8 @@ void App::removeAllGraphs_Slot()
     // 移除全部曲线
     customPlot->clearGraphs();
     customPlot->replot();
+//    plotGraphIndex = 0;
+//    plotGraphIndexList.clear();
 }
 
 void App::contextMenuRequest_Slot(QPoint pos)
@@ -262,7 +282,7 @@ void App::contextMenuRequest_Slot(QPoint pos)
 
 
 
-    if (customPlot->legend->selectTest(pos, false) >= 0) // 请求图例上的上下文菜单
+    if (plotLegend->selectTest(pos, false) >= 0) // 请求图例上的上下文菜单
     {
         menu->addAction("Move to top left", this, SLOT(moveLegend_Slot()))->setData((int)(Qt::AlignTop|Qt::AlignLeft));
         menu->addAction("Move to top center", this, SLOT(moveLegend_Slot()))->setData((int)(Qt::AlignTop|Qt::AlignHCenter));

@@ -160,7 +160,7 @@ border: 1px solid rgb(255, 255, 255);</string>
         <bool>false</bool>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab_plotTitle">
         <attribute name="title">
@@ -336,8 +336,8 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>311</width>
-               <height>397</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <attribute name="label">
@@ -381,7 +381,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QDoubleSpinBox" name="doubleSpinBox_leftAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>240</x>
+                 <x>180</x>
                  <y>20</y>
                  <width>62</width>
                  <height>22</height>
@@ -404,7 +404,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QLabel" name="label_leftAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>180</x>
+                 <x>130</x>
                  <y>20</y>
                  <width>54</width>
                  <height>21</height>
@@ -412,6 +412,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                </property>
                <property name="text">
                 <string>最小值：</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_leftAxis_range_confirm">
+               <property name="geometry">
+                <rect>
+                 <x>250</x>
+                 <y>20</y>
+                 <width>51</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>确认</string>
                </property>
               </widget>
              </widget>
@@ -551,8 +564,8 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>311</width>
-               <height>397</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <attribute name="label">
@@ -596,7 +609,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QDoubleSpinBox" name="doubleSpinBox_bottomAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>240</x>
+                 <x>180</x>
                  <y>20</y>
                  <width>62</width>
                  <height>22</height>
@@ -619,7 +632,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QLabel" name="label_bottomAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>180</x>
+                 <x>130</x>
                  <y>20</y>
                  <width>54</width>
                  <height>21</height>
@@ -627,6 +640,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                </property>
                <property name="text">
                 <string>最小值：</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_bottomAxis_range_confirm">
+               <property name="geometry">
+                <rect>
+                 <x>250</x>
+                 <y>20</y>
+                 <width>51</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>确认</string>
                </property>
               </widget>
              </widget>
@@ -766,8 +792,8 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>311</width>
-               <height>397</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <attribute name="label">
@@ -811,7 +837,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QDoubleSpinBox" name="doubleSpinBox_rightAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>240</x>
+                 <x>180</x>
                  <y>20</y>
                  <width>62</width>
                  <height>22</height>
@@ -834,7 +860,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QLabel" name="label_rightAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>180</x>
+                 <x>130</x>
                  <y>20</y>
                  <width>54</width>
                  <height>21</height>
@@ -842,6 +868,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                </property>
                <property name="text">
                 <string>最小值：</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_rightAxis_range_confirm">
+               <property name="geometry">
+                <rect>
+                 <x>250</x>
+                 <y>20</y>
+                 <width>51</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>确认</string>
                </property>
               </widget>
              </widget>
@@ -1026,11 +1065,17 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QDoubleSpinBox" name="doubleSpinBox_topAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>240</x>
+                 <x>180</x>
                  <y>20</y>
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="minimum">
+                <double>-99999.990000000005239</double>
+               </property>
+               <property name="maximum">
+                <double>99999.990000000005239</double>
                </property>
               </widget>
               <widget class="QLabel" name="label_topAxis_max">
@@ -1049,7 +1094,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <widget class="QLabel" name="label_topAxis_min">
                <property name="geometry">
                 <rect>
-                 <x>180</x>
+                 <x>130</x>
                  <y>20</y>
                  <width>54</width>
                  <height>21</height>
@@ -1057,6 +1102,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                </property>
                <property name="text">
                 <string>最小值：</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_topAxis_range_confirm">
+               <property name="geometry">
+                <rect>
+                 <x>250</x>
+                 <y>20</y>
+                 <width>51</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>确认</string>
                </property>
               </widget>
              </widget>
