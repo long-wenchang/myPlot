@@ -176,7 +176,7 @@ void App::selectionChanged_Slot()
     }
 
     // 同步图形的选择与对应图例项的选择:
-    for (int i=0; i<customPlot->graphCount(); ++i)
+    for (int i=0; i<customPlot->graphCount(); i++)
     {
         plotGraph = customPlot->graph(i);
         plotItem = plotLegend->itemWithPlottable(plotGraph);
@@ -184,6 +184,24 @@ void App::selectionChanged_Slot()
         {
             plotItem->setSelected(true);
             plotGraph->setSelection(QCPDataSelection(plotGraph->data()->dataRange()));
+
+            // graph text
+            QString gLabel = plotGraph->name();
+            ui->textEdit_legend_object_content->setText(gLabel);
+
+            // legend font and size
+            QFont lFont = plotLegend->font();
+            ui->fontComboBox_legend_object_title_font->setCurrentFont(lFont);
+            ui->comboBox_legend_object_title_font_size->setCurrentText(QString::number(lFont.pointSize()));
+
+            // graph color
+            QColor gColor = plotGraph->pen().color();
+            ui->label_legend_style_color_show->setStyleSheet("background-color: " + gColor.name() + ";");
+            qDebug() << gColor;
+            // ui->label__legend_object_title_font_color_show->setStyleSheet("background-color: " + gColor.name() + ";");
+            int gSize = plotGraph->pen().width();
+            ui->spinBox_legend_style_size->setValue(gSize);
+            break;
         }
     }
 }
@@ -292,7 +310,7 @@ void App::contextMenuRequest_Slot(QPoint pos)
     }
     else  // 请求图形的通用上下文菜单
     {
-        menu->addAction("Add random graph", this, SLOT(addRandomGraph_Slot()));
+        // menu->addAction("Add random graph", this, SLOT(addRandomGraph_Slot()));
         if (customPlot->selectedGraphs().size() > 0)
             menu->addAction("Remove selected graph", this, SLOT(removeSelectedGraph_Slot()));
         if (customPlot->graphCount() > 0)

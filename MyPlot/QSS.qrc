@@ -2,11 +2,4 @@
     <qresource prefix="/">
         <file>app.qss</file>
     </qresource>
-    <qresource prefix="/icon">
-        <file>icon/export.ico</file>
-        <file>icon/save.ico</file>
-        <file>icon/app.ico</file>
-        <file>icon/plot.ico</file>
-        <file>icon/save as.ico</file>
-    </qresource>
 </RCC>

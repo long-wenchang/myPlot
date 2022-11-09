@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>app.ico</file>
+        <file>export.ico</file>
+        <file>plot.ico</file>
+        <file>save as.ico</file>
+        <file>save.ico</file>
+    </qresource>
+</RCC>

@@ -256,30 +256,6 @@ void App::tabWidget_Init()
     });
 
     // plot graph
-    connect(ui->comboBox_legend_object, &QComboBox::currentTextChanged, this, [=]{
-        // qDebug() << ui->comboBox_legend_object->currentIndex();
-        int graphIndex = ui->comboBox_legend_object->currentIndex();
-
-        plotGraph = customPlot->graph(graphIndex);
-        plotItem = plotLegend->itemWithPlottable(plotGraph);
-        plotItem->setSelected(true);
-        plotGraph->setSelection(QCPDataSelection(plotGraph->data()->dataRange()));
-
-        // graph text
-        QString gLabel = customPlot->graph(graphIndex)->name();
-        ui->textEdit_legend_object_content->setText(gLabel);
-
-        // legend font and size
-        QFont lFont = plotLegend->font();
-        ui->fontComboBox_legend_object_title_font->setCurrentFont(lFont);
-        ui->comboBox_legend_object_title_font_size->setCurrentText(QString::number(lFont.pointSize()));
-
-        // graph color
-        QColor gColor = customPlot->graph(graphIndex)->pen().color();
-        ui->label__legend_object_title_font_color_show->setStyleSheet("background-color: " + gColor.name() + ";");
-        int gSize = customPlot->graph(graphIndex)->pen().width();
-        ui->spinBox_legend_style_size->setValue(gSize);
-    });
     connect(ui->pushButton_legend_confirm, &QPushButton::clicked, this, [=]{
         QString content = ui->textEdit_legend_object_content->toPlainText();
         plotGraph->setName(content);
@@ -322,14 +298,6 @@ void App::tabWidget_Init()
         }
     });
     connect(ui->spinBox_legend_style_size, SIGNAL(valueChanged(int)), this, SLOT(plotGraph_SizeChanged(int)));
-//    connect(ui->spinBox_legend_style_size, &QSpinBox::editingFinished, this, [=]{
-//        int size = ui->spinBox_legend_style_size->value();
-//        QPen graphPen;
-//        graphPen.setWidth(size);
-//        plotGraph->setPen(graphPen);
-//        customPlot->replot();
-//    });
-
     connect(ui->comboBox_legend_sytle, &QComboBox::currentTextChanged, this, [=]{
         int index = ui->comboBox_legend_sytle->currentIndex();
         plotGraph->setScatterStyle(QCPScatterStyle(shapes.at(index)));
@@ -339,7 +307,9 @@ void App::tabWidget_Init()
 
 void App::plotGraph_SizeChanged(int size)
 {
+    QColor gColor = plotGraph->pen().color();
     QPen graphPen;
+    graphPen.setColor(gColor);
     graphPen.setWidth(size);
     plotGraph->setPen(graphPen);
     customPlot->replot();
@@ -381,7 +351,6 @@ void App::tabW_plotAxis(int index)
 {
     if (index == 1)
     {
-        qDebug() << index;
         QCPRange xRange = plotXAxis->range();
         QString xTitle = plotXAxis->label();
         QFont xFont = plotXAxis->labelFont();
@@ -396,7 +365,6 @@ void App::tabW_plotAxis(int index)
     }
     else if (0 == index)
     {
-        qDebug() << index;
         QCPRange yRange = plotYAxis->range();
         QString yTitle = plotYAxis->label();
         QFont yFont = plotYAxis->labelFont();
@@ -411,7 +379,6 @@ void App::tabW_plotAxis(int index)
     }
     else if (3 == index)
     {
-        qDebug() << index;
         QCPRange x2Range = plotXAxis2->range();
         QString x1Title = plotXAxis2->label();
         QFont x1Font = plotXAxis2->labelFont();
@@ -426,7 +393,6 @@ void App::tabW_plotAxis(int index)
     }
     else if (2 == index)
     {
-        qDebug() << index;
         QCPRange y2Range = plotYAxis2->range();
         QString y1Title = plotYAxis2->label();
         QFont y1Font = plotYAxis2->labelFont();
@@ -442,52 +408,7 @@ void App::tabW_plotAxis(int index)
 }
 void App::tabW_plotGraph()
 {
-    ui->comboBox_legend_object->clear();
 
-    if (customPlot->graphCount() == 0)
-    {
-        return;
-    }
-    else
-    {
-        // ui->comboBox_legend_object->clear();
-        for (int index=0; index<(customPlot->graphCount()); ++index)
-        {
-            QString name = customPlot->graph(index)->name();
-            qDebug() << index << name;
-            ui->comboBox_legend_object->addItem(name);
-        }
-    }
-
-    // 导出闪退原因：graph的index与实际的不符，graph一旦被创建，index就不会发生改变，因此在for循环时找不到对应的index，从而错误闪退
-
-//    if (customPlot->graphCount() == 0)
-//        return;
-//    else
-//    {
-//        for (int index = 0; index < customPlot->graphCount(); index++)
-//        {
-//            strGraphList.append(customPlot->graph(index)->name());
-//        }
-//        ui->comboBox_legend_object->addItems(strGraphList);
-
-////        int graphIndex = ui->comboBox_legend_object->currentIndex();
-
-////        // graph text
-////        QString gLabel = customPlot->graph(graphIndex)->name();
-////        ui->textEdit_legend_object_content->setText(gLabel);
-
-////        // legend font and size
-////        QFont lFont = plotLegend->font();
-////        ui->fontComboBox_legend_object_title_font->setCurrentFont(lFont);
-////        ui->comboBox_legend_object_title_font_size->setCurrentText(QString::number(lFont.pointSize()));
-
-////        // graph color
-////        QColor gColor = customPlot->graph(graphIndex)->pen().color();
-////        ui->label__legend_object_title_font_color_show->setStyleSheet("background-color: " + gColor.name() + ";");
-////        int gSize = customPlot->graph(graphIndex)->pen().width();
-////        ui->spinBox_legend_style_size->setValue(gSize);
-//    }
 }
 
 

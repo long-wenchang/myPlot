@@ -103,8 +103,8 @@ private:
     QCPLegend *plotLegend;
 
     QCPGraph *plotGraph;
-    int plotGraphIndex = 0;
-    QVector<long> plotGraphIndexList;
+    // int plotGraphIndex = 0;
+    // QVector<long> plotGraphIndexList;
     QCPPlottableLegendItem *plotItem;
 };
 #endif // APP_H

@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>App</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="QSS.qrc">
-    <normaloff>:/icon/icon/app.ico</normaloff>:/icon/icon/app.ico</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -113,8 +109,8 @@ border: 1px solid rgb(255, 255, 255);</string>
         <string>绘图</string>
        </property>
        <property name="icon">
-        <iconset resource="QSS.qrc">
-         <normaloff>:/icon/icon/plot.ico</normaloff>:/icon/icon/plot.ico</iconset>
+        <iconset resource="icon.qrc">
+         <normaloff>:/img/plot.ico</normaloff>:/img/plot.ico</iconset>
        </property>
       </widget>
      </item>
@@ -160,7 +156,7 @@ border: 1px solid rgb(255, 255, 255);</string>
         <bool>false</bool>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_plotTitle">
         <attribute name="title">
@@ -272,7 +268,7 @@ border: 1px solid rgb(255, 255, 255);</string>
               <x>10</x>
               <y>110</y>
               <width>311</width>
-              <height>101</height>
+              <height>131</height>
              </rect>
             </property>
             <property name="title">
@@ -283,24 +279,24 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>10</x>
                <y>20</y>
-               <width>281</width>
+               <width>291</width>
                <height>71</height>
               </rect>
              </property>
             </widget>
-           </widget>
-           <widget class="QPushButton" name="pushButton_title_confirm">
-            <property name="geometry">
-             <rect>
-              <x>250</x>
-              <y>220</y>
-              <width>75</width>
-              <height>23</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>确认</string>
-            </property>
+            <widget class="QPushButton" name="pushButton_title_confirm">
+             <property name="geometry">
+              <rect>
+               <x>230</x>
+               <y>100</y>
+               <width>75</width>
+               <height>23</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>确认</string>
+             </property>
+            </widget>
            </widget>
           </widget>
          </item>
@@ -329,33 +325,20 @@ border: 1px solid rgb(255, 255, 255);</string>
              <string notr="true">background-color: rgba(240, 240, 240, 80);</string>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_leftAxis">
              <property name="geometry">
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>311</width>
+               <height>397</height>
               </rect>
              </property>
              <attribute name="label">
               <string>左轴</string>
              </attribute>
-             <widget class="QPushButton" name="pushButton_confirm_leftAxis">
-              <property name="geometry">
-               <rect>
-                <x>230</x>
-                <y>300</y>
-                <width>75</width>
-                <height>23</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>确认</string>
-              </property>
-             </widget>
              <widget class="QGroupBox" name="groupBox_leftAxis">
               <property name="geometry">
                <rect>
@@ -434,7 +417,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                 <x>0</x>
                 <y>70</y>
                 <width>311</width>
-                <height>221</height>
+                <height>251</height>
                </rect>
               </property>
               <property name="title">
@@ -446,7 +429,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <x>10</x>
                  <y>110</y>
                  <width>291</width>
-                 <height>101</height>
+                 <height>131</height>
                 </rect>
                </property>
                <property name="title">
@@ -460,6 +443,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                   <width>271</width>
                   <height>71</height>
                  </rect>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pushButton_confirm_leftAxis">
+                <property name="geometry">
+                 <rect>
+                  <x>210</x>
+                  <y>100</y>
+                  <width>75</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>确认</string>
                 </property>
                </widget>
               </widget>
@@ -571,19 +567,6 @@ border: 1px solid rgb(255, 255, 255);</string>
              <attribute name="label">
               <string>下轴</string>
              </attribute>
-             <widget class="QPushButton" name="pushButton_confirm_bottomAxis">
-              <property name="geometry">
-               <rect>
-                <x>230</x>
-                <y>370</y>
-                <width>75</width>
-                <height>23</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>确认</string>
-              </property>
-             </widget>
              <widget class="QGroupBox" name="groupBox_bottomAxis">
               <property name="geometry">
                <rect>
@@ -662,7 +645,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                 <x>0</x>
                 <y>70</y>
                 <width>311</width>
-                <height>221</height>
+                <height>251</height>
                </rect>
               </property>
               <property name="title">
@@ -674,7 +657,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <x>10</x>
                  <y>110</y>
                  <width>291</width>
-                 <height>101</height>
+                 <height>131</height>
                 </rect>
                </property>
                <property name="title">
@@ -688,6 +671,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                   <width>271</width>
                   <height>71</height>
                  </rect>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pushButton_confirm_bottomAxis">
+                <property name="geometry">
+                 <rect>
+                  <x>210</x>
+                  <y>100</y>
+                  <width>75</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>确认</string>
                 </property>
                </widget>
               </widget>
@@ -799,19 +795,6 @@ border: 1px solid rgb(255, 255, 255);</string>
              <attribute name="label">
               <string>右轴</string>
              </attribute>
-             <widget class="QPushButton" name="pushButton_confirm_rightAxis">
-              <property name="geometry">
-               <rect>
-                <x>230</x>
-                <y>370</y>
-                <width>75</width>
-                <height>23</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>确认</string>
-              </property>
-             </widget>
              <widget class="QGroupBox" name="groupBox_rightAxis">
               <property name="geometry">
                <rect>
@@ -890,7 +873,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                 <x>0</x>
                 <y>70</y>
                 <width>311</width>
-                <height>221</height>
+                <height>251</height>
                </rect>
               </property>
               <property name="title">
@@ -902,7 +885,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <x>10</x>
                  <y>110</y>
                  <width>291</width>
-                 <height>101</height>
+                 <height>131</height>
                 </rect>
                </property>
                <property name="title">
@@ -916,6 +899,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                   <width>271</width>
                   <height>71</height>
                  </rect>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pushButton_confirm_rightAxis">
+                <property name="geometry">
+                 <rect>
+                  <x>210</x>
+                  <y>100</y>
+                  <width>75</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>确认</string>
                 </property>
                </widget>
               </widget>
@@ -1020,26 +1016,13 @@ border: 1px solid rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>311</width>
-               <height>397</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <attribute name="label">
               <string>上轴</string>
              </attribute>
-             <widget class="QPushButton" name="pushButton_confirm_topAxis">
-              <property name="geometry">
-               <rect>
-                <x>230</x>
-                <y>370</y>
-                <width>75</width>
-                <height>23</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>确认</string>
-              </property>
-             </widget>
              <widget class="QGroupBox" name="groupBox_topAxis">
               <property name="geometry">
                <rect>
@@ -1124,7 +1107,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                 <x>0</x>
                 <y>70</y>
                 <width>311</width>
-                <height>221</height>
+                <height>251</height>
                </rect>
               </property>
               <property name="title">
@@ -1136,7 +1119,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                  <x>10</x>
                  <y>110</y>
                  <width>291</width>
-                 <height>101</height>
+                 <height>131</height>
                 </rect>
                </property>
                <property name="title">
@@ -1150,6 +1133,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                   <width>271</width>
                   <height>71</height>
                  </rect>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pushButton_confirm_topAxis">
+                <property name="geometry">
+                 <rect>
+                  <x>210</x>
+                  <y>100</y>
+                  <width>75</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>确认</string>
                 </property>
                </widget>
               </widget>
@@ -1264,36 +1260,13 @@ border: 1px solid rgb(255, 255, 255);</string>
            <property name="title">
             <string/>
            </property>
-           <widget class="QGroupBox" name="groupBox_legend_object">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>10</y>
-              <width>311</width>
-              <height>51</height>
-             </rect>
-            </property>
-            <property name="title">
-             <string>对象</string>
-            </property>
-            <widget class="QComboBox" name="comboBox_legend_object">
-             <property name="geometry">
-              <rect>
-               <x>10</x>
-               <y>20</y>
-               <width>291</width>
-               <height>22</height>
-              </rect>
-             </property>
-            </widget>
-           </widget>
            <widget class="QGroupBox" name="groupBox_legend_title">
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>150</y>
+              <y>90</y>
               <width>311</width>
-              <height>221</height>
+              <height>251</height>
              </rect>
             </property>
             <property name="title">
@@ -1305,7 +1278,7 @@ border: 1px solid rgb(255, 255, 255);</string>
                <x>10</x>
                <y>110</y>
                <width>291</width>
-               <height>101</height>
+               <height>131</height>
               </rect>
              </property>
              <property name="title">
@@ -1319,6 +1292,19 @@ border: 1px solid rgb(255, 255, 255);</string>
                 <width>271</width>
                 <height>71</height>
                </rect>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="pushButton_legend_confirm">
+              <property name="geometry">
+               <rect>
+                <x>200</x>
+                <y>100</y>
+                <width>75</width>
+                <height>23</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>确认</string>
               </property>
              </widget>
             </widget>
@@ -1421,7 +1407,7 @@ border: 1px solid rgb(255, 255, 255);</string>
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>70</y>
+              <y>0</y>
               <width>311</width>
               <height>81</height>
              </rect>
@@ -1511,19 +1497,6 @@ border: 1px solid rgb(255, 255, 255);</string>
              </property>
             </widget>
            </widget>
-           <widget class="QPushButton" name="pushButton_legend_confirm">
-            <property name="geometry">
-             <rect>
-              <x>250</x>
-              <y>380</y>
-              <width>75</width>
-              <height>23</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>确认</string>
-            </property>
-           </widget>
           </widget>
          </item>
         </layout>
@@ -1540,8 +1513,8 @@ border: 1px solid rgb(255, 255, 255);</string>
   </action>
   <action name="action_save">
    <property name="icon">
-    <iconset resource="QSS.qrc">
-     <normaloff>:/icon/icon/save.ico</normaloff>:/icon/icon/save.ico</iconset>
+    <iconset resource="icon.qrc">
+     <normaloff>:/img/save.ico</normaloff>:/img/save.ico</iconset>
    </property>
    <property name="text">
     <string>保存</string>
@@ -1549,8 +1522,8 @@ border: 1px solid rgb(255, 255, 255);</string>
   </action>
   <action name="action_export">
    <property name="icon">
-    <iconset resource="QSS.qrc">
-     <normaloff>:/icon/icon/export.ico</normaloff>:/icon/icon/export.ico</iconset>
+    <iconset resource="icon.qrc">
+     <normaloff>:/img/export.ico</normaloff>:/img/export.ico</iconset>
    </property>
    <property name="text">
     <string>导出</string>
@@ -1578,6 +1551,10 @@ border: 1px solid rgb(255, 255, 255);</string>
    </property>
   </action>
   <action name="action_save_as">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/img/save as.ico</normaloff>:/img/save as.ico</iconset>
+   </property>
    <property name="text">
     <string>另存为</string>
    </property>
@@ -1595,7 +1572,7 @@ border: 1px solid rgb(255, 255, 255);</string>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="QSS.qrc"/>
+  <include location="icon.qrc"/>
  </resources>
  <connections/>
 </ui>
